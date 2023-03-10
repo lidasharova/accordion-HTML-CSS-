@@ -1,13 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<script src="style.css"></script>
+	<link rel="stylesheet" href="normalize.css">
+	<link rel="stylesheet" href="style.css">
 	<title>Accordion</title>
 </head>
-<body>
 
+<body>
+	<main class="main">
+		<section class="accordion">
+			<div class="accordion__container">
+				<h1 class="accordion__title">CSS Bayan</h1>
+
+				<div class="accordion__item">
+					<input class="accordion__input" type="radio" id="input_1" name="input" value="input_1" checked>
+					<label class="accordion__header" for="input_1">You can`t just copy and paste CSS <div
+							class="accordion__icon"></div></label>
+					<div class="accordion-content">
+						<div class="accordion__img mem1"></div>
+					</div>
+				</div>
+
+				<div class="accordion__item">
+					<input class="accordion__input" type="radio" id="input_2" name="input" value="input_2">
+					<label class="accordion__header" for="input_2">You can`t just copy and paste CSS <div
+							class="accordion__icon"></div>
+					</label>
+					<div class="accordion-content">
+						<div class="accordion__img mem2"></div>
+					</div>
+				</div>
+
+				<div class="accordion__item">
+					<input class="accordion__input" type="radio" id="input_3" name="input" value="input_1">
+					<label class="accordion__header" for="input_3">You can`t just copy and paste CSS <div
+							class="accordion__icon"></div>
+					</label>
+					<div class="accordion-content">
+						<div class="accordion__img mem3"></div>
+					</div>
+				</div>
+
+			</div>
+		</section>
+	</main>
 </body>
+
 </html>

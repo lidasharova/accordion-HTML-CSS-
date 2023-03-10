@@ -1,0 +1,171 @@
+@font-face {
+  font-family: 'Montserrat';
+  src: url('./assets/fonts/Montserrat-Regular.ttf');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Roboto-Bold';
+  src: url('./assets/fonts/Roboto-Bold.ttf');
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'Roboto-Medium';
+  src: url('./assets/fonts/Roboto-Medium.ttf');
+  font-weight: 500;
+}
+
+body {
+  font-size: 10px;
+  font-family: 'Montserrat', 'Arial', sans-serif;
+  text-align: center;
+  line-height: 1.5;
+  background-color: #0e0e15e4;
+}
+
+.accordion__container {
+  font-size: 1rem;
+  max-width: 30rem;
+  margin: 3rem auto;
+  text-align: center;
+  color: aliceblue;
+}
+
+.accordion__container:hover .accordion__icon {
+  opacity: 1;
+}
+
+.accordion__title {
+  font-family: 'Roboto-Bold', 'Arial', sans-serif;
+  color: rgba(253, 228, 197, 0.866);
+  font-size: 2rem;
+}
+
+.accordion__item {
+  margin-bottom: 2rem;
+}
+
+.accordion__header {
+  padding: 0.5rem;
+  border: 0.05rem solid rgb(241, 236, 236);
+  display: block;
+  cursor: pointer;
+  transition: all 0.5s ease-out;
+}
+.accordion__header:hover {
+  /* background-color: rgb(241, 236, 236); */
+  color: rgb(95, 112, 221);
+}
+
+.accordion__input {
+  display: inline;
+  appearance: none;
+  width: 0;
+  height: 0;
+}
+
+/* изменения при выборе инпута */
+.accordion__input:checked ~ .accordion__header {
+  color: rgb(112, 129, 239);
+}
+
+.accordion__input:checked ~ .accordion__header + .accordion-content {
+  display: block;
+  opacity: 0; /* задаем нулевую прозрачность для начала */
+  animation: fadeIn 1s ease-in-out forwards;
+}
+
+.accordion__input:checked ~ .accordion__header .accordion__icon {
+  background-image: url('./assets/svg/up.svg');
+}
+
+/* изменения при наведении на инпут */
+input[type='radio']:hover ~ .accordion__header {
+  color: rgb(112, 129, 239);
+}
+
+input[type='radio']:hover ~ .accordion__header + .accordion-content {
+  display: block;
+  opacity: 0; /* задаем нулевую прозрачность для начала */
+  animation: fadeIn 1s ease-in-out forwards;
+}
+
+input[type='radio']:hover ~ .accordion__header .accordion__icon {
+  background-image: url('./assets/svg/up.svg');
+}
+
+/* анимация для плавного появления мема */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.accordion-content {
+  padding: 1rem;
+  border: 0.05rem solid rgb(254, 250, 250);
+  border-top: none;
+  display: none;
+}
+
+.accordion__img {
+  margin: 0 auto;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+.accordion__icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  display: inline-block;
+  background-image: url('assets/svg/down.svg');
+  vertical-align: middle;
+  background-repeat: no-repeat;
+  background-position: left center;
+  margin-left: 8rem;
+  transition: all 0.1s ease;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.mem1 {
+  background: url('./assets/img/mem1.png') center/cover;
+  width: 15rem;
+  height: 18rem;
+}
+
+.mem2 {
+  background: url('./assets/img/mem2.gif') center/cover;
+  width: 15rem;
+  height: 18rem;
+}
+
+.mem3 {
+  background: url('./assets/img/mem3.jpg') center/cover;
+  width: 15rem;
+  height: 18rem;
+}
+
+.mem4 {
+  background: url('./assets/img/mem4.jpg') center/cover;
+  width: 15rem;
+  height: 18rem;
+}
+
+.mem5 {
+  background: url('./assets/img/mem5.jpeg') center/cover;
+  width: 15rem;
+  height: 18rem;
+}
+
+.mem6 {
+  background: url('./assets/img/mem6.jpeg') center/cover;
+  width: 15rem;
+  height: 18rem;
+}
+
+/* mobile 320x568, tablet 820x1180, desktop 1920×1080 */
