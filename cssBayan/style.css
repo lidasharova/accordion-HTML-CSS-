@@ -53,8 +53,8 @@ body {
   cursor: pointer;
   transition: all 0.5s ease-out;
 }
+
 .accordion__header:hover {
-  /* background-color: rgb(241, 236, 236); */
   color: rgb(95, 112, 221);
 }
 
@@ -70,16 +70,16 @@ body {
   color: rgb(112, 129, 239);
 }
 
-.accordion__input:checked ~ .accordion__header + .accordion-content {
+.accordion__input:checked ~ .accordion__header + .accordion__content {
   display: block;
   opacity: 0; /* задаем нулевую прозрачность для начала */
   animation: fadeIn 2s ease-in-out forwards;
 }
 
 .accordion__input:checked
- ~ .accordion__header
-+ .accordion-content
- .accordion__img {
+  ~ .accordion__header
+  + .accordion__content
+  .accordion__img {
   display: block;
   opacity: 0; /* задаем нулевую прозрачность для начала */
   animation: fadeIn 2s ease-in-out forwards;
@@ -94,21 +94,23 @@ input[type='radio']:hover ~ .accordion__header {
   color: rgb(112, 129, 239);
 }
 
-input[type='radio']:hover ~ .accordion__header + .accordion-content {
-  display: block;
-  opacity: 0; /* задаем нулевую прозрачность для начала */
-  animation: fadeIn 1s ease-in-out forwards;
-}
-input[type='radio']:hover
-  ~ .accordion__header
-  + .accordion-content
-  .accordion__img {
+.accordion__item:hover .accordion__content,
+.accordion__input:hover ~ .accordion__content {
   display: block;
   opacity: 0; /* задаем нулевую прозрачность для начала */
   animation: fadeIn 1s ease-in-out forwards;
 }
 
-input[type='radio']:hover ~ .accordion__header .accordion__icon {
+.accordion__input:hover
+  ~ .accordion__header
+  + .accordion__content
+  .accordion__img {
+  display: block;
+  opacity: 0; /* задаем нулевую прозрачность для начала */
+  animation: fadeIn 2s ease-in-out forwards;
+}
+
+.accordion__input:hover ~ .accordion__header .accordion__icon {
   background-image: url('./assets/svg/up.svg');
 }
 
@@ -122,7 +124,7 @@ input[type='radio']:hover ~ .accordion__header .accordion__icon {
   }
 }
 
-.accordion-content {
+.accordion__content {
   padding: 1rem;
   border-top: none;
   display: none;
