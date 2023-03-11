@@ -19,7 +19,6 @@
 body {
   font-size: 10px;
   font-family: 'Montserrat', 'Arial', sans-serif;
-  text-align: center;
   line-height: 1.5;
   background-color: #0e0e15e4;
 }
@@ -28,7 +27,6 @@ body {
   font-size: 1rem;
   max-width: 30rem;
   margin: 3rem auto;
-  text-align: center;
   color: aliceblue;
 }
 
@@ -52,6 +50,11 @@ body {
   display: block;
   cursor: pointer;
   transition: all 0.5s ease-out;
+  padding-left: 1.5rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .accordion__header:hover {
@@ -85,7 +88,7 @@ body {
   animation: fadeIn 2s ease-in-out forwards;
 }
 
-.accordion__input:checked ~ .accordion__header .accordion__icon {
+.accordion__input:checked + .accordion__header .accordion__icon {
   background-image: url('./assets/svg/up.svg');
 }
 
@@ -151,6 +154,10 @@ input[type='radio']:hover ~ .accordion__header {
   transition: all 0.1s ease;
   opacity: 0;
   transition: opacity 0.8s ease-in-out;
+}
+
+.accordion__header__title {
+  max-width: 20rem;
 }
 
 .mem1 {
