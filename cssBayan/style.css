@@ -21,45 +21,65 @@ tablet 820x1180,
 desktop 1920×1080  */
 
 /* стили для мобильного экрана
-@media (max-width: 375px) {
+@media (max-width: 425px) {
 }
 
 стили для планшетного экрана */
-/* @media (min-width: 375px) and (max-width: 820px) {
+/* @media (min-width: 425px) and (max-width: 820px) {
 } */
 
 /* стили для десктопного экрана
 @media (min-width: 821px) {
 } */
 
-/* для мобилки стили сначала*/
+/* для мобилки*/
 body {
-  font-size: 10px;
+  font-size: 62.5%;
   font-family: 'Montserrat', 'Arial', sans-serif;
   line-height: 1.5;
   background-color: #0e0e15e4;
 }
 
 /* для планшета */
-@media (min-width: 375px) and (max-width: 820px) {
+@media (min-width: 425px) and (max-width: 820px) {
   body {
-    font-size: 16px;
+    font-size: 115%;
   }
 }
 
 /* для десктопа */
 @media (min-width: 821px) {
   body {
-    font-size: 18px;
+    font-size: 120%;
   }
 }
 
 .accordion__container {
   font-size: 0.8rem;
-  max-width: 32rem;
+  max-width: 22rem;
   margin: 0 auto;
   color: aliceblue;
   padding: 0 0.5rem;
+  padding-bottom: 1rem;
+}
+
+@media (min-width: 425px) and (max-width: 820px) {
+  .accordion__container {
+    font-size: 1rem;
+    max-width: 40rem;
+    padding: 0 2rem;
+    padding-bottom: 3rem;
+  }
+}
+
+/* для десктопа */
+@media (min-width: 821px) {
+  .accordion__container {
+    font-size: 1.3rem;
+    max-width: 55rem;
+    padding: 0 3rem;
+    padding-bottom: 5rem;
+  }
 }
 
 .accordion__title {
@@ -68,6 +88,22 @@ body {
   color: rgba(253, 228, 197, 0.866);
   font-size: 1.5rem;
   text-align: center;
+}
+
+@media (min-width: 425px) and (max-width: 820px) {
+  .accordion__title {
+    padding: 0.5rem 0 0.5rem 0;
+    font-size: 2rem;
+    text-align: center;
+  }
+}
+
+@media (min-width: 821px) {
+  .accordion__title {
+    padding: 0.5rem 0 0.5rem 0;
+    font-size: 2.5rem;
+    text-align: center;
+  }
 }
 
 .accordion__item {
@@ -81,10 +117,14 @@ body {
   transition: opacity 1s ease-in-out;
   max-width: 100%;
   height: auto;
-  cursor: pointer;
 }
 
 .accordion__header {
+  display: flex;
+  flex-direction: column;
+}
+
+.accordion__header__container {
   border: 0.02rem solid rgb(241, 236, 236);
   display: block;
   transition: all 0.5s ease-out;
@@ -95,8 +135,15 @@ body {
   justify-content: space-between;
 }
 
+@media (min-width: 425px) and (max-width: 820px) {
+  .accordion__header__container {
+    padding-left: 1.1rem;
+  }
+}
+
 @media (min-width: 821px) {
-  .accordion__header {
+  .accordion__header__container {
+    padding-left: 1.8rem;
     cursor: pointer;
   }
 }
@@ -104,14 +151,14 @@ body {
 .accordion__header__title {
   width: 15rem;
 }
-@media (min-width: 375px) and (max-width: 820px) {
+@media (min-width: 425px) and (max-width: 820px) {
   .accordion__header__title {
-    width: 25rem;
+    width: 20rem;
   }
 }
 @media (min-width: 821px) {
   .accordion__header__title {
-    width: 30rem;
+    width: 35rem;
   }
 }
 
@@ -126,10 +173,9 @@ body {
 .accordion__content {
   padding: 1rem;
   display: none;
-  transition: opacity 0.8s ease-in-out;
+  transition: opacity 0.5s ease-in-out, visibility 0s linear 0.5s;
 }
 
-/* для десктопа */
 @media (min-width: 821px) {
   .accordion__content {
     cursor: pointer;
@@ -149,17 +195,18 @@ body {
 }
 
 /* для планшета */
-@media (min-width: 375px) and (max-width: 820px) {
+@media (min-width: 425px) and (max-width: 820px) {
   .accordion__icon {
-    width: 2rem;
-    height: 2rem;
+    width: 1.5rem;
+    height: 1.5rem;
   }
 }
+
 /* для десктопа */
 @media (min-width: 821px) {
   .accordion__icon {
-    width: 2.5rem;
-    height: 2.5rem;
+    width: 2rem;
+    height: 2rem;
     cursor: pointer;
     opacity: 0;
   }
@@ -207,29 +254,83 @@ body {
   height: 15rem;
 }
 
-
-
-  /* изменения при выборе инпута */
-  .accordion__input:checked ~ .accordion__header {
-    color: rgb(112, 129, 239);
+/* для планшета  */
+@media (min-width: 425px) and (max-width: 820px) {
+  .mem1,
+  .mem2,
+  .mem4 {
+    width: 17rem;
+    height: 20rem;
   }
 
-  .accordion__input:checked ~ .accordion__header + .accordion__content {
-    display: block;
-    height: auto; /* задать авто-высоту для контента */
-    overflow: visible; /* показать все содержимое */
-    padding: 1rem;
-    transition: visible 0.8s ease-in-out;
-    cursor: pointer;
+  .mem3 {
+    width: 20rem;
+    height: 20rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-size: 20rem 20rem;
+  }
+  .mem5 {
+    width: 18rem;
+    height: 20rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-size: 16rem 20rem;
+  }
+  .mem6 {
+    width: 20rem;
+    height: 19rem;
+  }
+}
+
+/* для десктопа */
+@media (min-width: 821px) {
+  .mem1,
+  .mem2,
+  .mem4 {
+    width: 25rem;
+    height: 28rem;
   }
 
-  .accordion__input:checked + .accordion__header .accordion__icon {
-    background-image: url('./assets/svg/up.svg');
+  .mem3 {
+    width: 30rem;
+    height: 30rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-size: 30rem 30rem;
   }
+  .mem5 {
+    width: 30rem;
+    height: 32rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-size: 30rem 32rem;
+  }
+  .mem6 {
+    width: 30rem;
+    height: 29rem;
+  }
+}
 
+/* изменения при выборе инпута */
+.accordion__input:checked ~ .accordion__header {
+  color: rgb(112, 129, 239);
+}
 
+.accordion__input:checked ~ label .accordion__content {
+  display: block;
+  height: auto; /* задать авто-высоту для контента */
+  overflow: visible; /* показать все содержимое */
+  padding: 1rem;
+  transition: visible 1s ease-in-out;
+  cursor: pointer;
+}
 
-  /* ДЛЯ ДЕСКТОПА */
+.accordion__input:checked + .accordion__header .accordion__icon {
+  background-image: url('./assets/svg/up.svg');
+}
+
+/* ДЛЯ ДЕСКТОПА */
 @media (min-width: 821px) {
   /* изменения при наведении на инпут */
   .accordion__container:hover .accordion__icon {
@@ -244,9 +345,6 @@ body {
     height: auto;
   }
 
-  .accordion__header:hover {
-    color: rgb(95, 112, 221);
-  }
 
   input[type='radio']:hover ~ .accordion__header {
     color: rgb(112, 129, 239);
@@ -282,5 +380,3 @@ body {
     opacity: 1;
   }
 }
-
-
